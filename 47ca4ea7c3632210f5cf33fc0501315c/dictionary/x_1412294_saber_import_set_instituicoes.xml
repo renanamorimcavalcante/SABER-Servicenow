@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="a5a7ae00c3bfa210f5cf33fc050131f1" extends="sys_import_set_row" label="Import Set Instituicoes" max_length="40" name="x_1412294_saber_import_set_instituicoes" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=UF" label="UF" max_length="40" name="u_uf" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=TELEFONE_1" label="TELEFONE_1" max_length="40" name="u_telefone_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=MUNICIPIO" label="MUNICIPIO" max_length="40" name="u_municipio" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=CODIGO_INEP" label="CODIGO_INEP" max_length="40" name="u_codigo_inep" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=E_MAIL" label="E_MAIL" max_length="86" name="u_e_mail" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=CODIGO_UNIDADE_DE_ENSINO" label="CODIGO_UNIDADE_DE_ENSINO" max_length="40" name="u_codigo_unidade_de_ensino" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=UNIDADE_DE_ENSINO" label="UNIDADE_DE_ENSINO" max_length="170" name="u_unidade_de_ensino" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=NOME_DEPENDENCIA_ADMINISTRATIVA" label="NOME_DEPENDENCIA_ADMINISTRATIVA" max_length="40" name="u_nome_depende_administrativa" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=CODIGO_MUNICIPIO" label="CODIGO_MUNICIPIO" max_length="40" name="u_codigo_municipio" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=CODIGO_IES" label="CODIGO_IES" max_length="40" name="u_codigo_ies" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=NUMERO" label="NUMERO" max_length="40" name="u_numero" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=CODIGO_EMEC_ENDERECO_CAMPUS" label="CODIGO_EMEC_ENDERECO_CAMPUS" max_length="40" name="u_codigo_emec_endereco_campus" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=CEP" label="CEP" max_length="40" name="u_cep" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=TELEFONE_2" label="TELEFONE_2" max_length="40" name="u_telefone_2" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=NOME_SISTEMA_DE_ENSINO" label="NOME_SISTEMA_DE_ENSINO" max_length="40" name="u_nome_sistema_de_ensino" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=LOGRADOURO" label="LOGRADOURO" max_length="218" name="u_logradouro" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=NOME_TIPO_ESCOLA" label="NOME_TIPO_ESCOLA" max_length="40" name="u_nome_tipo_escola" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=NOME_SUBDEPENDENCIA_ADMINISTRATIVA" label="NOME_SUBDEPENDENCIA_ADMINISTRATIVA" max_length="40" name="u_nome_subdepe_administrativa" type="string"/>
+    </element>
+</database>

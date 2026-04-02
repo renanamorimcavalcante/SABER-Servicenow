@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="DELETE">
+        <name>max_tokens</name>
+        <rest_message_function display_value="Custom POST">8eca62ccc3723210f5cf33fc0501311f</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2026-01-27 22:41:37</sys_created_on>
+        <sys_id>57bf220cc3b23210f5cf33fc050131a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>max_tokens</sys_name>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_57bf220cc3b23210f5cf33fc050131a4</sys_update_name>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2026-01-27 22:41:37</sys_updated_on>
+        <type>string</type>
+        <value/>
+    </sys_rest_message_fn_parameters>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</application>
+        <file_path/>
+        <instance_id>840fb6291bc206d0e84d2f8dee4bcb6a</instance_id>
+        <instance_name>dev266444</instance_name>
+        <name>sys_rest_message_fn_parameters_57bf220cc3b23210f5cf33fc050131a4</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters"><sys_rest_message_fn_parameters action="INSERT_OR_UPDATE"><name>max_tokens</name><rest_message_function display_value="Custom POST">8eca62ccc3723210f5cf33fc0501311f</rest_message_function><sys_class_name>sys_rest_message_fn_parameters</sys_class_name><sys_created_by>renan.cavalcante</sys_created_by><sys_created_on>2026-01-27 22:41:37</sys_created_on><sys_id>57bf220cc3b23210f5cf33fc050131a4</sys_id><sys_mod_count>0</sys_mod_count><sys_name>max_tokens</sys_name><sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package><sys_policy/><sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope><sys_update_name>sys_rest_message_fn_parameters_57bf220cc3b23210f5cf33fc050131a4</sys_update_name><sys_updated_by>renan.cavalcante</sys_updated_by><sys_updated_on>2026-01-27 22:41:37</sys_updated_on><type>string</type><value/></sys_rest_message_fn_parameters></record_update>]]></payload>
+        <payload_hash>-988680769</payload_hash>
+        <record_name>max_tokens</record_name>
+        <reverted_from/>
+        <source>5a89eac8c3723210f5cf33fc05013154</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2026-01-27 22:41:37</sys_created_on>
+        <sys_id>9fbf220cc3b23210f5cf33fc050131a6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19c019e9b6a0000001</sys_recorded_at>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2026-01-27 22:41:37</sys_updated_on>
+        <type>Variable Substitutions</type>
+        <update_guid>93bf220cf5b2321063a59f9b0087c0a6</update_guid>
+        <update_guid_history>93bf220cf5b2321063a59f9b0087c0a6:-988680769</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2026-01-30 12:16:52</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_fn_parameters">sys_rest_message_fn_parameters</sys_db_object>
+        <sys_id>068d413841bf46dc9b1d619e7d8bbe10</sys_id>
+        <sys_metadata>57bf220cc3b23210f5cf33fc050131a4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>max_tokens</sys_name>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_parent display_value="Custom POST">8eca62ccc3723210f5cf33fc0501311f</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+        <sys_scope_delete display_value="">470baf0f401742df82c503970a430571</sys_scope_delete>
+        <sys_update_name>sys_rest_message_fn_parameters_57bf220cc3b23210f5cf33fc050131a4</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_fn_parameters_57bf220cc3b23210f5cf33fc050131a4">9fbf220cc3b23210f5cf33fc050131a6</sys_update_version>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2026-01-30 12:16:52</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

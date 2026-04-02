@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1412294_saber.SABERUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>SABERUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var SABERUtils = Class.create();
+SABERUtils.prototype = {
+    initialize: function() {
+        this.urlEstados = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
+        this.urlMunicipios = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/{UF}/municipios';
+        this.urlInstituicoes = 'https://raw.githubusercontent.com/renanamorimcavalcante/dados-abertos-mec/refs/heads/main/dados.json';
+		this.restMessage = new sn_ws.RESTMessageV2();
+    },
+
+    importarEstados: function() {
+        this.restMessage.setEndpoint(this.urlEstados);
+        this.restMessage.setHttpMethod('GET');
+
+        var response = this.restMessage.execute();
+        var httpStatus = response.getStatusCode();
+        
+        if (httpStatus === 200) {
+            var estados = JSON.parse(response.getBody());
+            for (var i = 0; i < estados.length; i++) {
+                var estado = estados[i];
+                var gr = new GlideRecord('x_1412294_saber_estados');
+                gr.addQuery('sigla', estado.sigla);
+                gr.query();
+
+                if (!gr.next()) {
+                    // O registro não existe, então cria um novo
+                    gr.newRecord();
+                    gr.setValue('nome', estado.nome);
+                    gr.setValue('sigla', estado.sigla);
+                    
+                    // Adicionando o valor da região
+                    gr.setValue('regiao', estado.regiao.nome);
+                    
+                    gr.insert();
+                } else {
+                    // Se o registro já existe, atualiza o nome da região, caso mude
+                    gr.setValue('regiao', estado.regiao.nome);
+                    gr.update();
+                }
+            }
+            gs.info('Importação de estados concluída com sucesso.');
+        } else {
+            gs.error('Erro ao importar estados. Status: ' + httpStatus + ', Mensagem: ' + response.getErrorMessage());
+        }
+    },
+    
+    importarMunicipios: function() {
+        var grEstado = new GlideRecord('x_1412294_saber_estados');
+        grEstado.query();
+        
+        while (grEstado.next()) {
+            var url = this.urlMunicipios.replace('{UF}', grEstado.sigla);
+            this.restMessage.setEndpoint(url);
+            this.restMessage.setHttpMethod('GET');
+
+            var response = this.restMessage.execute();
+            var httpStatus = response.getStatusCode();
+
+            if (httpStatus === 200) {
+                var municipios = JSON.parse(response.getBody());
+                for (var i = 0; i < municipios.length; i++) {
+                    var municipio = municipios[i];
+                    var grMunicipio = new GlideRecord('x_1412294_saber_municipios');
+                    grMunicipio.addQuery('nome', municipio.nome);
+                    grMunicipio.addQuery('estado', grEstado.sys_id);
+                    grMunicipio.query();
+
+                    if (!grMunicipio.next()) {
+                        grMunicipio.newRecord();
+                        grMunicipio.setValue('nome', municipio.nome);
+                        grMunicipio.setValue('estado', grEstado.sys_id);
+                        
+                        // Adicionando os novos campos
+                        grMunicipio.setValue('mesorregiao', municipio.microrregiao.mesorregiao.nome);
+                        grMunicipio.setValue('regiao', municipio.microrregiao.mesorregiao.UF.regiao.nome);
+                        
+                        grMunicipio.insert();
+                    }
+                }
+                gs.info('Importação de municípios para o estado ' + grEstado.u_sigla + ' concluída com sucesso.');
+            } else {
+                gs.error('Erro ao importar municípios para o estado ' + grEstado.u_sigla + '. Status: ' + httpStatus + ', Mensagem: ' + response.getErrorMessage());
+            }
+        }
+    },
+
+	importarInstituicoes: function() {
+        this.restMessage.setEndpoint(this.urlInstituicoes);
+        this.restMessage.setHttpMethod('GET');
+
+        var response = this.restMessage.execute();
+        var httpStatus = response.getStatusCode();
+
+        if (httpStatus === 200) {
+            var responseBody = response.getBody();
+            var data = JSON.parse(responseBody);
+            
+            if (data.body && data.body.length > 0) {
+                var instituicoes = data.body;
+                for (var i = 0; i < instituicoes.length; i++) {
+                    var instituicao = instituicoes[i];
+                    var grInstituicao = new GlideRecord('x_1412294_saber_instituicao');
+                    
+                    // Usando CODIGO_INEP como a chave para evitar duplicados
+                    grInstituicao.addQuery('codigo_mec', instituicao.CODIGO_INEP);
+                    grInstituicao.query();
+
+                    if (!grInstituicao.next()) {
+                        grInstituicao.newRecord();
+                    }
+
+                    // Mapeamento dos campos da API para a sua tabela
+                    grInstituicao.setValue('nome_da_instituicao', instituicao.UNIDADE_DE_ENSINO);
+                    grInstituicao.setValue('codigo_mec', instituicao.CODIGO_INEP);
+                    grInstituicao.setValue('tipo_instituicao', instituicao.NOME_SISTEMA_DE_ENSINO);
+                    grInstituicao.setValue('sistema_de_ensino', instituicao.NOME_SISTEMA_DE_ENSINO);
+                    grInstituicao.setValue('codigo_da_instituicao', instituicao.CODIGO_DA_INSTITUICAO);
+                    grInstituicao.setValue('dependencia_administrativa', instituicao.NOME_DEPENDENCIA_ADMINISTRATIVA);
+                    grInstituicao.setValue('subdependencia_administrativa', instituicao.NOME_SUBDEPENDENCIA_ADMINISTRATIVA);
+                    grInstituicao.setValue('cep', instituicao.CEP);
+                    grInstituicao.setValue('logradouro', instituicao.LOGRADOURO);
+                    grInstituicao.setValue('numero', instituicao.NUMERO);
+                    grInstituicao.setValue('e_mail', instituicao.E_MAIL);
+                    grInstituicao.setValue('telefone_1', instituicao.TELEFONE_1);
+                    grInstituicao.setValue('telefone_2', instituicao.TELEFONE_2);
+                    grInstituicao.setValue('codigo_emec_campus', instituicao.CODIGO_EMEC_ENDERECO_CAMPUS);
+                    grInstituicao.setValue('codigo_ies', instituicao.CODIGO_IES);
+                    grInstituicao.setValue('codigo_inep', instituicao.CODIGO_INEP);
+
+                    // Buscando o sys_id do município com base no nome e UF
+                    var grMunicipio = new GlideRecord('x_1412294_saber_municipios');
+                    grMunicipio.addQuery('nome', instituicao.MUNICIPIO);
+                    grMunicipio.addQuery('estado.sigla', instituicao.UF);
+                    grMunicipio.query();
+                    if (grMunicipio.next()) {
+                        grInstituicao.setValue('municipio', grMunicipio.sys_id);
+                    }
+
+                    // Buscando o sys_id do estado com base na sigla
+                    var grEstado = new GlideRecord('x_1412294_saber_estados');
+                    grEstado.addQuery('sigla', instituicao.UF);
+                    grEstado.query();
+                    if (grEstado.next()) {
+                        grInstituicao.setValue('estado', grEstado.sys_id);
+                    }
+
+                    if (!grInstituicao.isNewRecord()) {
+                        grInstituicao.update();
+                    } else {
+                        grInstituicao.insert();
+                    }
+                }
+                gs.info('Importação de instituições concluída com sucesso.');
+            } else {
+                gs.info('Nenhum dado de instituição encontrado na resposta da API.');
+            }
+        } else {
+            gs.error('Erro ao importar instituições. Status: ' + httpStatus + ', Mensagem: ' + response.getErrorMessage());
+        }
+    },
+
+    type: 'SABERUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2025-08-30 03:55:19</sys_created_on>
+        <sys_id>04de0a6fc3632210f5cf33fc050131f5</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>SABERUtils</sys_name>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+        <sys_update_name>sys_script_include_04de0a6fc3632210f5cf33fc050131f5</sys_update_name>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2025-08-31 12:59:17</sys_updated_on>
+    </sys_script_include>
+</record_update>

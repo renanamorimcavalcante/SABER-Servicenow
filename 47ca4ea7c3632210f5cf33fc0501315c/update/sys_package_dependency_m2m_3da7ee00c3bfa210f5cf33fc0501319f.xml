@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="System Import Sets" source="com.glide.system_import_set">a06c21d28d30021087de63ac7f1f00b4</dependency>
+        <min_version>1.0.0</min_version>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2025-08-31 18:57:55</sys_created_on>
+        <sys_id>3da7ee00c3bfa210f5cf33fc0501319f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2025-08-31 18:57:55</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

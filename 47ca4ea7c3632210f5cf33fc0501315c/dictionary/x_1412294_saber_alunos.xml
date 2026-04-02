@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="080d4009c3f2b610f5cf33fc05013137" extends="x_1412294_bushido_alunos" label="Alunos" max_length="40" name="x_1412294_saber_alunos" type="collection">
+        <element choice="1" label="O(A) aluno(a) possui alguma Necessidade Educacional Específica (NEE) que demande" mandatory="true" max_length="40" name="necessidades_especificas" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Sim" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Não" sequence="1" value="2"/>
+            </choice>
+        </element>
+        <element label="Alérgico" max_length="255" name="alergico" type="boolean"/>
+        <element label="Enviar" max_length="255" name="enviar" type="journal_input"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="O(A) aluno(a) possui alguma Necessidade Educacional Específica (NEE) que demande" max_length="40" name="o_a_aluno_a_possui_alguma_necessidade_educacional_especifica_nee_que_demande_sup" type="string">
+            <choice/>
+        </element>
+        <element label="Plano de Recuperação Sugerido" max_length="10000" name="plano_de_recuperacao_sugerido" type="string_full_utf8"/>
+        <element label="Digite aqui:" max_length="300" name="digite_aqui" type="string_full_utf8"/>
+        <element label="Teste" max_length="65536" name="teste" type="wiki_text"/>
+        <element label="Informe os alérgenos:" max_length="500" name="informe_os_alergenos" type="string"/>
+        <element label="Notas" max_length="4000" name="notas" type="journal"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="O aluno(a) possui algum diagnóstico de deficiência, transtorno do desenvolviment" max_length="40" name="aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Deficiência Física" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Transtorno de Déficit de Atenção e Hiperatividade (TDAH)" sequence="5" value="6"/>
+                <element inactive_on_update="false" label="Deficiência Visual (Baixa visão ou Cegueira)" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Transtorno do Espectro Autista (TEA)" sequence="4" value="5"/>
+                <element inactive_on_update="false" label="Outros" sequence="7" value="8"/>
+                <element inactive_on_update="false" label="Deficiência Intelectual" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="Altas Habilidades / Superdotação" sequence="6" value="7"/>
+                <element inactive_on_update="false" label="Deficiência Auditiva ou Surdez" sequence="2" value="3"/>
+            </choice>
+        </element>
+    </element>
+</database>

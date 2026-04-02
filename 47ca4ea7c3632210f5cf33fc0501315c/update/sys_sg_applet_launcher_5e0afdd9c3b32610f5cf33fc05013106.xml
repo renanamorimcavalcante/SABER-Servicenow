@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher">
+    <sys_sg_applet_launcher action="INSERT_OR_UPDATE">
+        <access_control_type>user_roles</access_control_type>
+        <active>true</active>
+        <available_offline>true</available_offline>
+        <header_button/>
+        <header_titles>0eeebe29c3bf6610f5cf33fc05013127</header_titles>
+        <hide_empty_sections>true</hide_empty_sections>
+        <name>Saber M</name>
+        <required_roles>x_1412294_saber.admin,x_1412294_saber.user</required_roles>
+        <search_config/>
+        <sys_class_name>sys_sg_applet_launcher</sys_class_name>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2025-09-04 12:51:01</sys_created_on>
+        <sys_id>5e0afdd9c3b32610f5cf33fc05013106</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Saber M</sys_name>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+        <sys_update_name>sys_sg_applet_launcher_5e0afdd9c3b32610f5cf33fc05013106</sys_update_name>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2025-09-05 12:30:25</sys_updated_on>
+        <title>Saber M</title>
+    </sys_sg_applet_launcher>
+</record_update>

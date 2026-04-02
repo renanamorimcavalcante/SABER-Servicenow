@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="sistema_de_ensino" label="Sistema de Ensino" language="en" table="x_1412294_saber_instituicao">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>sistema_de_ensino</element>
+            <help/>
+            <hint/>
+            <label>Sistema de Ensino</label>
+            <language>en</language>
+            <name>x_1412294_saber_instituicao</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2025-08-31 12:21:35</sys_created_on>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_name>Sistema de Ensino</sys_name>
+            <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+            <sys_update_name>sys_documentation_x_1412294_saber_instituicao_sistema_de_ensino_en</sys_update_name>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2025-08-31 12:21:40</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

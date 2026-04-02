@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <context_profiles/>
+        <description>Bot do Sistema SABER</description>
+        <dialog_acts_enabled>false</dialog_acts_enabled>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <foundational>false</foundational>
+        <graph>{
+  "graph_api_version": "1.0.74",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "93d6966e6bad490ebf06928be5d4b55d": {
+          "id": "93d6966e6bad490ebf06928be5d4b55d",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "cd8926c547e04efc8454c34a686728b6": {
+          "id": "cd8926c547e04efc8454c34a686728b6",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "cef58002a6f74a48ba1d8769136fa502": {
+          "id": "cef58002a6f74a48ba1d8769136fa502",
+          "stepType": "TextOutput",
+          "name": "Recepção",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Olá, "
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user.first_name}}",
+                        "displayValue": "Input Variables➛User➛First name"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ", espero poder te ajudar."
+                    },
+                    {
+                      "type": "emoji",
+                      "emoji": {
+                        "id": "blush",
+                        "name": "Smiling Face with Smiling Eyes",
+                        "short_names": [
+                          "blush"
+                        ],
+                        "colons": ":blush:",
+                        "emoticons": [],
+                        "unified": "1f60a",
+                        "skin": null,
+                        "native": "😊"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": " "
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "0f7e442c36ac4c28b5594426d59d8d54"
+            },
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "fbb38026-d96a-41c8-b396-8166f85f965f"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "66fcb1af2a364c1a99d8f143592f30ec": {
+          "id": "66fcb1af2a364c1a99d8f143592f30ec",
+          "stepType": "TextPrompt",
+          "name": "Prompt 1",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.prompt_1}}",
+                      "displayValue": "Input Variables➛Prompt 1"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "6d322429ef8b4a7ca4add34537b4bfd3",
+          "detailDescription": "",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          },
+          "requestFeedback": true
+        },
+        "cdd048abc5f241ecba15f457ddabbeed": {
+          "id": "cdd048abc5f241ecba15f457ddabbeed",
+          "name": "Chama DeepSeek 1",
+          "script": "(function execute() {\n    var dsUtils = new DeepSeekSaberUtils();\n    \n    var pergunta = vaInputs.prompt_1.toString();\n    // Substitui quebras de linha reais por espaços ou \\n escapado\n    var historicoAtual = (vaVars.historico || \"\").replace(/[\\n\\r]/g, \" \"); \n\n    var resposta = dsUtils.perguntarComHistorico(pergunta, historicoAtual);\n\n    // Limpa a resposta da IA de caracteres de controle antes de salvar no histórico\n    var respostaLimpa = resposta.replace(/[\\n\\r]/g, \" \");\n    \n    var novaInteracao = \" P: \" + pergunta + \" A: \" + respostaLimpa;\n    vaVars.historico = (historicoAtual + novaInteracao).substring(0, 2000); // Garante o limite de 2k caracteres\n\n    vaVars.resposta_ia = resposta;\n})()",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "712e316e1f58436baeb5951b0fb22fd3": {
+          "id": "712e316e1f58436baeb5951b0fb22fd3",
+          "stepType": "TextOutput",
+          "name": "Response 1",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaVars.resposta_ia}}",
+                        "displayValue": "Script Variables➛resposta_ia"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "9b91dd1842d549b49c6d823a67f84fe7"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "7503ec55e10b46a38ece149ae94be125": {
+          "id": "7503ec55e10b46a38ece149ae94be125",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "19e59e79c6224c0db1bc8949bd299896": {
+          "name": "Encerrar?",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Deseja fazer outra pergunta ou posso encerrar?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "b1096d6ad6fc43f2a0ca1533e764b397",
+          "detailDescription": "",
+          "id": "19e59e79c6224c0db1bc8949bd299896",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "ecd1974290d04187b3bf8da8cbb592e4": {
+          "id": "ecd1974290d04187b3bf8da8cbb592e4",
+          "stepType": "TextOutput",
+          "name": "Encerramento",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Certo! Obrigado por entrar em contato. Até a próxima. "
+                    },
+                    {
+                      "type": "emoji",
+                      "emoji": {
+                        "id": "grinning",
+                        "name": "Grinning Face",
+                        "short_names": [
+                          "grinning"
+                        ],
+                        "colons": ":grinning:",
+                        "emoticons": [],
+                        "unified": "1f600",
+                        "skin": null,
+                        "native": "😀"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": " "
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "8af582c2fb2e45e99cee7adc1dbf43af"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "e7fdf09a61824e8ca1bef25e965bc2e3": {
+          "id": "e7fdf09a61824e8ca1bef25e965bc2e3",
+          "stepType": "TextOutput",
+          "name": "Qual a nova pergunta?",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Ok! Sem problemas! "
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Pode escrever sua nova pergunta... "
+                    },
+                    {
+                      "type": "emoji",
+                      "emoji": {
+                        "id": "blush",
+                        "name": "Smiling Face with Smiling Eyes",
+                        "short_names": [
+                          "blush"
+                        ],
+                        "colons": ":blush:",
+                        "emoticons": [],
+                        "unified": "1f60a",
+                        "skin": null,
+                        "native": "😊"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": " "
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "b75d2e84d5bd474bba59671a8682aab0"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "006b0f5591724239939c60900bc6b56d": {
+          "name": "Tipo de atendimento",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Que tipo de atendimento você deseja?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "1219f93e48104fc5b60caf7ff95be5a4",
+          "detailDescription": "",
+          "id": "006b0f5591724239939c60900bc6b56d",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "c51b3121a79d41488abdbbda4c41920e": {
+          "id": "c51b3121a79d41488abdbbda4c41920e",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "b0700c781e124cb5888b74a09d342b4f": {
+          "id": "b0700c781e124cb5888b74a09d342b4f",
+          "stepType": "ImplicitEnd"
+        },
+        "ba609d50fadd4c8c9e95395b4a6b62f2": {
+          "id": "ba609d50fadd4c8c9e95395b4a6b62f2",
+          "stepType": "TextOutput",
+          "name": "Atendimento Padrão",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Certo, "
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user.first_name}}",
+                        "displayValue": "Input Variables➛User➛First name"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ", vou te mostrar as opções."
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "cce9122bd88c4c1b9dbbc64476d8e3c3"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "86e564bbcb8548c595d8081caf0a5bd3": {
+          "name": "Escolhas",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Escolha uma:"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "c8d7df4d642740a9afa6588789cdfe02",
+          "detailDescription": "",
+          "id": "86e564bbcb8548c595d8081caf0a5bd3",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "37060b23654c480e8deed2112d7570d5": {
+          "id": "37060b23654c480e8deed2112d7570d5",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "d64cc39aaeca45b2b1ef0acc859ee086": {
+          "id": "d64cc39aaeca45b2b1ef0acc859ee086",
+          "stepType": "ImplicitEnd"
+        },
+        "e5d84d1d531a4c7ca0e13a493d7bf634": {
+          "id": "e5d84d1d531a4c7ca0e13a493d7bf634",
+          "stepType": "TextOutput",
+          "name": "Aluno",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Olá, "
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user.first_name}}",
+                        "displayValue": "Input Variables➛User➛First name"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ", espero poder te ajudar."
+                    },
+                    {
+                      "type": "emoji",
+                      "emoji": {
+                        "id": "blush",
+                        "name": "Smiling Face with Smiling Eyes",
+                        "short_names": [
+                          "blush"
+                        ],
+                        "colons": ":blush:",
+                        "emoticons": [],
+                        "unified": "1f60a",
+                        "skin": null,
+                        "native": "😊"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": " "
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "b6fff320809a4105911dab852a19336e"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "37d70ad6c9ef4297994e8a204bbe9beb": {
+          "id": "37d70ad6c9ef4297994e8a204bbe9beb",
+          "stepType": "ImplicitEnd"
+        },
+        "9e80442faa49458eac65db923c0613db": {
+          "id": "9e80442faa49458eac65db923c0613db",
+          "stepType": "TextOutput",
+          "name": "Outro",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Outro"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "9fda2ee245a84d44b7f15c5b553b64c9"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "a398044a4d2347bbac3ca0d2fa278853": {
+          "id": "a398044a4d2347bbac3ca0d2fa278853",
+          "name": "Checa Departamento",
+          "script": "(function execute() {\n    // Armazena o departamento em uma variável global do chat\n    vaVars.user_department = vaInputs.user.getDisplayValue('department');\n})()",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "0c64584fe7304318af96d9b3e4be7e81": {
+          "name": "Escolhas do Aluno",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Escolha uma das opções abaixo:"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "199b4f68c7eb4e1bab3c48468ed5ffb6",
+          "detailDescription": "",
+          "id": "0c64584fe7304318af96d9b3e4be7e81",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        }
+      },
+      "edges": [
+        {
+          "id": "93f1c4d6d1004ee7b756662f578bba6c",
+          "edgeType": "Edge",
+          "source": "a398044a4d2347bbac3ca0d2fa278853",
+          "target": "37060b23654c480e8deed2112d7570d5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ac8f0fb155b34360a2af120f384a8979",
+          "edgeType": "Edge",
+          "source": "93d6966e6bad490ebf06928be5d4b55d",
+          "target": "a398044a4d2347bbac3ca0d2fa278853",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f49fedfab5ac42b08338b1088a0dfe2e",
+          "edgeType": "Edge",
+          "source": "66fcb1af2a364c1a99d8f143592f30ec",
+          "target": "cdd048abc5f241ecba15f457ddabbeed",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "764aad2262a54b47af07f12cb68f3eb4",
+          "edgeType": "Edge",
+          "source": "cdd048abc5f241ecba15f457ddabbeed",
+          "target": "712e316e1f58436baeb5951b0fb22fd3",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0482859485754e5180c5916c95848eab",
+          "edgeType": "Edge",
+          "source": "712e316e1f58436baeb5951b0fb22fd3",
+          "target": "19e59e79c6224c0db1bc8949bd299896",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "90accbec35ea4494b52264d2f1e1bdd6",
+          "edgeType": "Edge",
+          "source": "19e59e79c6224c0db1bc8949bd299896",
+          "target": "7503ec55e10b46a38ece149ae94be125",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f2c864b775834a399035fd67afde88ec",
+          "edgeType": "Branch",
+          "source": "7503ec55e10b46a38ece149ae94be125",
+          "target": "ecd1974290d04187b3bf8da8cbb592e4",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.encerrar_=encerrar",
+            "mode": "query"
+          },
+          "label": "Encerrar"
+        },
+        {
+          "id": "2925f535fe0d47ac98746d5c42bfb19b",
+          "edgeType": "Edge",
+          "source": "ecd1974290d04187b3bf8da8cbb592e4",
+          "target": "cd8926c547e04efc8454c34a686728b6",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "202df059d008419c8b5d518575ba47b7",
+          "edgeType": "Branch",
+          "source": "7503ec55e10b46a38ece149ae94be125",
+          "target": "e7fdf09a61824e8ca1bef25e965bc2e3",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.encerrar_=fazer_outra_pergunta",
+            "mode": "query"
+          },
+          "label": "Nova pergunta"
+        },
+        {
+          "id": "ab3187ce3f734b1d903747fd7c5a7609",
+          "edgeType": "Edge",
+          "source": "e7fdf09a61824e8ca1bef25e965bc2e3",
+          "target": "66fcb1af2a364c1a99d8f143592f30ec",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d53047d2b0a346a6aa15b55eb16d599c",
+          "edgeType": "Edge",
+          "source": "cef58002a6f74a48ba1d8769136fa502",
+          "target": "006b0f5591724239939c60900bc6b56d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a560a688148149b581fc06a12b90d919",
+          "edgeType": "Edge",
+          "source": "006b0f5591724239939c60900bc6b56d",
+          "target": "c51b3121a79d41488abdbbda4c41920e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "bdea6f6cf6174f6b9626541236c6bfe9",
+          "edgeType": "Branch",
+          "source": "c51b3121a79d41488abdbbda4c41920e",
+          "target": "66fcb1af2a364c1a99d8f143592f30ec",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.tipo_de_atendimento=Atendimento IA ",
+            "mode": "query"
+          },
+          "label": "Atendimento IA"
+        },
+        {
+          "id": "d778858b8ec54f8294607856053bc035",
+          "edgeType": "Branch",
+          "source": "c51b3121a79d41488abdbbda4c41920e",
+          "target": "ba609d50fadd4c8c9e95395b4a6b62f2",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "query",
+            "value": ""
+          },
+          "label": "Atendimento Padrão"
+        },
+        {
+          "id": "9e23dd91d7ce46efb8c53d6cb20bbb2c",
+          "edgeType": "Edge",
+          "source": "ba609d50fadd4c8c9e95395b4a6b62f2",
+          "target": "86e564bbcb8548c595d8081caf0a5bd3",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6a489aaf227f42e9a3ff291541d619bd",
+          "edgeType": "Edge",
+          "source": "86e564bbcb8548c595d8081caf0a5bd3",
+          "target": "b0700c781e124cb5888b74a09d342b4f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e4d30317aecd460f89100d72e8dd077d",
+          "edgeType": "Branch",
+          "source": "37060b23654c480e8deed2112d7570d5",
+          "target": "cef58002a6f74a48ba1d8769136fa502",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "script",
+            "value": "(function execute() {\n    // vaInputs.user é um GlideRecord. \n    // O campo 'department' é uma referência, então usamos o dot-walk direto no código.\n    var dept = vaInputs.user.department;\n\n    // Verificamos se o nome do departamento é exatamente 'Docente'\n    if (dept == 'c73a739dc376fa10f5cf33fc05013197') {\n        return true;\n    }\n\n    return false;\n})()"
+          },
+          "label": "Professor"
+        },
+        {
+          "id": "413d90f1965d44108c4876e779afc033",
+          "edgeType": "Branch",
+          "source": "37060b23654c480e8deed2112d7570d5",
+          "target": "e5d84d1d531a4c7ca0e13a493d7bf634",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "script",
+            "value": "(function execute() {\n    // vaInputs.user é um GlideRecord. \n    // O campo 'department' é uma referência, então usamos o dot-walk direto no código.\n    var dept = vaInputs.user.department;\n\n    // Verificamos se o nome do departamento é exatamente 'Docente'\n    if (dept == '719208a5c3f6fa10f5cf33fc05013168') {\n        return true;\n    }\n\n    return false;\n})()"
+          },
+          "label": "Aluno"
+        },
+        {
+          "id": "8b3a6c5bb1c045d28debad4349704b1b",
+          "edgeType": "Branch",
+          "source": "37060b23654c480e8deed2112d7570d5",
+          "target": "9e80442faa49458eac65db923c0613db",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "script",
+            "value": "(function execute() {\n    // vaInputs.user é um GlideRecord. \n    // O campo 'department' é uma referência, então usamos o dot-walk direto no código.\n    var dept = vaInputs.user.department;\n\n    // Verificamos se o nome do departamento é exatamente 'Docente'\n    if (dept == '221f3db5c6112284009f4becd3039cc9') {\n        return true;\n    }\n\n    return false;\n})()"
+          },
+          "label": "Se Outra"
+        },
+        {
+          "id": "2765c62a0b034469bc80f690deb6fde9",
+          "edgeType": "Edge",
+          "source": "9e80442faa49458eac65db923c0613db",
+          "target": "37d70ad6c9ef4297994e8a204bbe9beb",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b54fa7fdaa874fe39ef4bcfa7d4efeb4",
+          "edgeType": "Edge",
+          "source": "e5d84d1d531a4c7ca0e13a493d7bf634",
+          "target": "0c64584fe7304318af96d9b3e4be7e81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b48ce9ad218245629a349a0b425721b5",
+          "edgeType": "Edge",
+          "source": "0c64584fe7304318af96d9b3e4be7e81",
+          "target": "d64cc39aaeca45b2b1ef0acc859ee086",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "6d322429ef8b4a7ca4add34537b4bfd3": {
+      "id": "6d322429ef8b4a7ca4add34537b4bfd3",
+      "name": "prompt_1",
+      "label": "Prompt 1",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTc2OTg2OTc4ODEzOSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      },
+      "nodeId": "66fcb1af2a364c1a99d8f143592f30ec",
+      "isHidden": false
+    },
+    "2a64e7962a83442dadc7ad6f1285076c": {
+      "id": "2a64e7962a83442dadc7ad6f1285076c",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "resposta_ia",
+      "label": "resposta_ia",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "b1096d6ad6fc43f2a0ca1533e764b397": {
+      "id": "b1096d6ad6fc43f2a0ca1533e764b397",
+      "name": "encerrar_",
+      "label": "Encerrar?",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Fazer outra pergunta",
+          "value": "fazer_outra_pergunta"
+        },
+        {
+          "label": "Encerrar",
+          "value": "encerrar"
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "19e59e79c6224c0db1bc8949bd299896",
+      "isHidden": false
+    },
+    "1219f93e48104fc5b60caf7ff95be5a4": {
+      "id": "1219f93e48104fc5b60caf7ff95be5a4",
+      "name": "tipo_de_atendimento",
+      "label": "Tipo De Atendimento",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Atendimento Padrão",
+          "value": "Atendimento Padrão"
+        },
+        {
+          "label": "Atendimento IA ",
+          "value": "Atendimento IA "
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "006b0f5591724239939c60900bc6b56d",
+      "isHidden": false
+    },
+    "c8d7df4d642740a9afa6588789cdfe02": {
+      "id": "c8d7df4d642740a9afa6588789cdfe02",
+      "name": "escolhas",
+      "label": "Escolhas",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Consultar um Aluno",
+          "value": "Consultar um Aluno"
+        },
+        {
+          "label": "Abrir um chamado",
+          "value": "Abrir um chamado"
+        },
+        {
+          "label": "Solicitar alguma coisa",
+          "value": "Solicitar alguma coisa",
+          "checked": true,
+          "meta": {}
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "86e564bbcb8548c595d8081caf0a5bd3",
+      "isHidden": false
+    },
+    "0b56136c51b742d583b552c1bad32bbf": {
+      "id": "0b56136c51b742d583b552c1bad32bbf",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "user_department",
+      "label": "user_department",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "199b4f68c7eb4e1bab3c48468ed5ffb6": {
+      "id": "199b4f68c7eb4e1bab3c48468ed5ffb6",
+      "name": "escolhas_do_aluno",
+      "label": "Escolhas Do Aluno",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Solicitar Documentação",
+          "value": "Solicitar Documentação"
+        },
+        {
+          "label": "Abertura de Chamado",
+          "value": "Abertura de Chamado"
+        },
+        {
+          "label": "Verificar Minhas Notas",
+          "value": "Verificar Minhas Notas",
+          "checked": true,
+          "meta": {}
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "0c64584fe7304318af96d9b3e4be7e81",
+      "isHidden": false
+    }
+  }
+}</graph>
+        <key_phrases>saberia</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <model_type>nlu_keyword</model_type>
+        <modify_confirmation_enabled>false</modify_confirmation_enabled>
+        <name>saberia</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <root_topic_id/>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2026-01-31 14:23:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>7834e995c37e7a10f5cf33fc05013188</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>saberia</sys_name>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+        <sys_update_name>sys_cb_topic_7834e995c37e7a10f5cf33fc05013188</sys_update_name>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2026-02-01 02:15:56</sys_updated_on>
+        <title>SABER.IA</title>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+    </sys_cb_topic>
+    <sys_translated_text action="delete_multiple" query="documentkey=7834e995c37e7a10f5cf33fc05013188"/>
+</record_update>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="7d611a63c3a32210f5cf33fc050131f2" label="Estados" max_length="40" name="x_1412294_saber_estados" type="collection">
+        <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
+        <element label="Sigla" max_length="255" name="sigla" type="string"/>
+        <element label="Região" max_length="255" name="regiao" type="string"/>
+        <element display="true" label="Nome" max_length="40" name="nome" type="string"/>
+        <index name="index">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>
