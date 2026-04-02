@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_navigation_tab_map">
+    <sys_sg_navigation_tab_map action="INSERT_OR_UPDATE">
+        <navigation display_value="Now Mobile Nav">9f67848187403300e0ef0cf888cb0b2e</navigation>
+        <navigation_tab display_value="Saber M">5a0afdd9c3b32610f5cf33fc05013108</navigation_tab>
+        <order>350</order>
+        <sys_class_name>sys_sg_navigation_tab_map</sys_class_name>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2025-09-04 12:51:01</sys_created_on>
+        <sys_id>1a0afdd9c3b32610f5cf33fc0501310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+        <sys_update_name>sys_sg_navigation_tab_map_1a0afdd9c3b32610f5cf33fc0501310a</sys_update_name>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2025-09-04 12:51:01</sys_updated_on>
+    </sys_sg_navigation_tab_map>
+</record_update>

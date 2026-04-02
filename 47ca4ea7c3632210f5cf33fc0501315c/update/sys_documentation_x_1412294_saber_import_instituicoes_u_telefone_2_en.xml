@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_telefone_2" label="TELEFONE_2" language="en" table="x_1412294_saber_import_instituicoes">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_telefone_2</element>
+            <help/>
+            <hint/>
+            <label>TELEFONE_2</label>
+            <language>en</language>
+            <name>x_1412294_saber_import_instituicoes</name>
+            <plural>TELEFONE_2s</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2025-08-31 19:07:07</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>TELEFONE_2</sys_name>
+            <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+            <sys_update_name>sys_documentation_x_1412294_saber_import_instituicoes_u_telefone_2_en</sys_update_name>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2025-08-31 19:07:07</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

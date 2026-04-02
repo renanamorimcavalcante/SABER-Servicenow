@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="41cfc801c336b610f5cf33fc050131de" extends="sys_import_set_row" label="Alunos Data Mapping" max_length="40" name="x_1412294_saber_ihub_import_9c1d8409c3f2b610f5cf33fc0501312d" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=pontos_atencao" label="pontos_atencao" max_length="40" name="u_pontos_atencao" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=nota_bimestral_n2" label="nota_bimestral_n2" max_length="40" name="u_nota_bimestral_n2" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=serie_turma" label="serie_turma" max_length="40" name="u_serie_turma" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=perfil_comportamental" label="perfil_comportamental" max_length="40" name="u_perfil_comportamental" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=observacoes_diario" label="observacoes_diario" max_length="47" name="u_observacoes_diario" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=faltas_total_mes" label="faltas_total_mes" max_length="40" name="u_faltas_total_mes" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=nota_mensal_n1" label="nota_mensal_n1" max_length="40" name="u_nota_mensal_n1" type="string"/>
+        <element attributes="import_attribute_name=matricula" label="matricula" max_length="40" name="u_matricula" type="integer"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=data_nascimento" label="data_nascimento" max_length="40" name="u_data_nascimento" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=nome_completo" label="nome_completo" max_length="40" name="u_nome_completo" type="string"/>
+    </element>
+</database>

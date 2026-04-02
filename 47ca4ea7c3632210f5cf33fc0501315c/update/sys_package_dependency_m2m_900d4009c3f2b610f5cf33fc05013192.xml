@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="Bushido" source="x_1412294_bushido">d01ffabac3ad9210f5cf33fc05013120</dependency>
+        <min_version>1.0.0</min_version>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2026-01-30 13:24:32</sys_created_on>
+        <sys_id>900d4009c3f2b610f5cf33fc05013192</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2026-01-30 13:24:32</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

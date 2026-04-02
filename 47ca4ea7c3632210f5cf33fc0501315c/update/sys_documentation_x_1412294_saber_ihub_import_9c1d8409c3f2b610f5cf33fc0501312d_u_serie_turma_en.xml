@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_serie_turma" label="serie_turma" language="en" table="x_1412294_saber_ihub_import_9c1d8409c3f2b610f5cf33fc0501312d">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_serie_turma</element>
+            <help/>
+            <hint/>
+            <label>serie_turma</label>
+            <language>en</language>
+            <name>x_1412294_saber_ihub_import_9c1d8409c3f2b610f5cf33fc0501312d</name>
+            <plural>serie_turmas</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 13:36:36</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>serie_turma</sys_name>
+            <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+            <sys_update_name>sys_documentation_x_1412294_saber_ihub_import_9c1d8409c3f2b610f5cf33fc0501312d_u_serie_turma_en</sys_update_name>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 13:36:36</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

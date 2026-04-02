@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4297c504c3b7a210f5cf33fc0501313f" label="Instituição" max_length="40" name="x_1412294_saber_instituicao" type="collection">
+        <element label="Telefone 1" max_length="255" name="telefone_1" type="string"/>
+        <element label="Telefone 2" max_length="255" name="telefone_2" type="string"/>
+        <element label="Código INEP" max_length="255" name="codigo_inep" type="string"/>
+        <element label="E-mail" max_length="255" name="e_mail" type="string"/>
+        <element label="Código EMEC - Campus" max_length="40" name="codigo_emec_campus" type="string"/>
+        <element label="Número" max_length="255" name="numero" type="string"/>
+        <element label="Dependência administrativa" max_length="40" name="dependencia_administrativa" type="string"/>
+        <element label="Tipo de instituição" max_length="255" name="tipo_de_instituicao" type="string"/>
+        <element label="Código IES" max_length="255" name="codigo_ies" type="string"/>
+        <element label="CEP" max_length="40" name="cep" type="string"/>
+        <element label="Município" max_length="32" name="municipio" reference="x_1412294_saber_municipios" type="reference"/>
+        <element label="Logradouro" max_length="255" name="logradouro" type="string"/>
+        <element label="Código da Instituição" max_length="255" name="codigo_da_instituicao" type="string"/>
+        <element label="Estado" max_length="32" name="estado" reference="x_1412294_saber_estados" type="reference"/>
+        <element label="Subdependência administrativa" max_length="255" name="subdependencia_administrativa" type="string"/>
+        <element display="true" label="Nome da instituição" max_length="40" name="nome_da_instituicao" type="string"/>
+        <element label="Sistema de Ensino" max_length="255" name="sistema_de_ensino" type="string"/>
+        <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Codigo MEC" max_length="255" name="codigo_mec" type="string"/>
+        <index name="index">
+            <element name="estado"/>
+        </index>
+        <index name="index2">
+            <element name="municipio"/>
+        </index>
+        <index name="index3">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>

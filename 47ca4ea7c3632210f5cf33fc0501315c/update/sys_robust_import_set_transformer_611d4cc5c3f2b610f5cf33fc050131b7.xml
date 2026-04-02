@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_robust_import_set_transformer">
+    <sys_robust_import_set_transformer action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <batch_size>10</batch_size>
+        <description>RTE definition for Alunos Data Mapping</description>
+        <name>Alunos Data Mapping_rte_ihub</name>
+        <properties/>
+        <robust_transform_engine display_value="Alunos Data Mapping_etl_ihub">251d4cc5c3f2b610f5cf33fc050131b3</robust_transform_engine>
+        <source_table>x_1412294_saber_ihub_import_9c1d8409c3f2b610f5cf33fc0501312d</source_table>
+        <sys_class_name>sys_robust_import_set_transformer</sys_class_name>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2026-01-30 13:24:54</sys_created_on>
+        <sys_id>611d4cc5c3f2b610f5cf33fc050131b7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Alunos Data Mapping_rte_ihub</sys_name>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+        <sys_update_name>sys_robust_import_set_transformer_611d4cc5c3f2b610f5cf33fc050131b7</sys_update_name>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2026-01-30 13:24:54</sys_updated_on>
+        <verbose>false</verbose>
+    </sys_robust_import_set_transformer>
+</record_update>

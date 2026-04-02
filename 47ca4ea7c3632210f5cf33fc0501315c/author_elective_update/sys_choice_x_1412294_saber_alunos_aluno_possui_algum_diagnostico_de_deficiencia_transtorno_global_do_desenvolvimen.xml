@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen" table="x_1412294_saber_alunos" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen</element>
+            <name>x_1412294_saber_alunos</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 18:54:07</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen</sys_name>
+            <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+            <sys_update_name>sys_choice_x_1412294_saber_alunos_aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen</sys_update_name>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 18:54:07</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Deficiência Física</label>
+            <language>en</language>
+            <name>x_1412294_saber_alunos</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 18:54:07</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 18:54:07</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Deficiência Visual (Baixa visão ou Cegueira)</label>
+            <language>en</language>
+            <name>x_1412294_saber_alunos</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 18:54:07</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 18:54:07</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Deficiência Auditiva ou Surdez</label>
+            <language>en</language>
+            <name>x_1412294_saber_alunos</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 18:54:07</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 18:54:07</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Deficiência Intelectual</label>
+            <language>en</language>
+            <name>x_1412294_saber_alunos</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 18:54:07</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 18:54:07</sys_updated_on>
+            <value>4</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Transtorno do Espectro Autista (TEA)</label>
+            <language>en</language>
+            <name>x_1412294_saber_alunos</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 18:54:07</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 18:54:07</sys_updated_on>
+            <value>5</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Transtorno de Déficit de Atenção e Hiperatividade (TDAH)</label>
+            <language>en</language>
+            <name>x_1412294_saber_alunos</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 18:54:07</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 18:54:07</sys_updated_on>
+            <value>6</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Altas Habilidades / Superdotação</label>
+            <language>en</language>
+            <name>x_1412294_saber_alunos</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 18:54:07</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 18:54:07</sys_updated_on>
+            <value>7</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aluno_possui_algum_diagnostico_de_deficiencia_transtorno_global_do_desenvolvimen</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Outros</label>
+            <language>en</language>
+            <name>x_1412294_saber_alunos</name>
+            <sequence>7</sequence>
+            <synonyms/>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 18:54:07</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 18:54:07</sys_updated_on>
+            <value>8</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

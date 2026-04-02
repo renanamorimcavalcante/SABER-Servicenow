@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2026-01-30 12:56:59</sys_created_on>
+        <sys_id>bcb68c05c3b2b610f5cf33fc0501315e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DeepSeekSaberUtils.x_1412294_saber.user</sys_name>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+        <sys_security_acl display_value="DeepSeekSaberUtils">e0b64c05c3b2b610f5cf33fc050131e3</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_bcb68c05c3b2b610f5cf33fc0501315e</sys_update_name>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2026-01-30 12:56:59</sys_updated_on>
+        <sys_user_role display_value="x_1412294_saber.user" name="x_1412294_saber.user">9bca4ea7c3632210f5cf33fc05013188</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

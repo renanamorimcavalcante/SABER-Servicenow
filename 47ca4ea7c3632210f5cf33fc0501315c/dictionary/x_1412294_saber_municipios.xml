@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4fe4d6e7c3a32210f5cf33fc050131c2" label="municípios" max_length="40" name="x_1412294_saber_municipios" type="collection">
+        <element label="Região" max_length="255" name="regiao" type="string"/>
+        <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
+        <element label="Mesorregião" max_length="255" name="mesorregiao" type="string"/>
+        <element label="Estado" max_length="32" name="estado" reference="x_1412294_saber_estados" type="reference"/>
+        <element display="true" label="Nome" max_length="40" name="nome" type="string"/>
+        <index name="index">
+            <element name="estado"/>
+        </index>
+        <index name="index2">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>

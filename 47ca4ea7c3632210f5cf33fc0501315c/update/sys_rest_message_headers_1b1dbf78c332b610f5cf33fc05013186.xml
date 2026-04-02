@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_headers">
+    <sys_rest_message_headers action="INSERT_OR_UPDATE">
+        <name>Authorization</name>
+        <rest_message display_value="DeepeSeek Integration SABER">21c9a60cc3723210f5cf33fc05013162</rest_message>
+        <sys_class_name>sys_rest_message_headers</sys_class_name>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2026-01-30 12:15:59</sys_created_on>
+        <sys_id>1b1dbf78c332b610f5cf33fc05013186</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Authorization</sys_name>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+        <sys_update_name>sys_rest_message_headers_1b1dbf78c332b610f5cf33fc05013186</sys_update_name>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2026-01-30 12:15:59</sys_updated_on>
+        <value>Bearer sk-3d46fcaabf3c48e48a779d9f2f2ef394</value>
+    </sys_rest_message_headers>
+</record_update>

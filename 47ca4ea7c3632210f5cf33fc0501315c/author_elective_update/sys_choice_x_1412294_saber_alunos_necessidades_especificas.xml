@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="necessidades_especificas" table="x_1412294_saber_alunos" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>necessidades_especificas</element>
+            <name>x_1412294_saber_alunos</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 17:44:28</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>necessidades_especificas</sys_name>
+            <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+            <sys_update_name>sys_choice_x_1412294_saber_alunos_necessidades_especificas</sys_update_name>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 17:44:28</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>necessidades_especificas</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Sim</label>
+            <language>en</language>
+            <name>x_1412294_saber_alunos</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 17:44:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 17:44:28</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>necessidades_especificas</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Não</label>
+            <language>en</language>
+            <name>x_1412294_saber_alunos</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>renan.cavalcante</sys_created_by>
+            <sys_created_on>2026-01-30 17:44:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>renan.cavalcante</sys_updated_by>
+            <sys_updated_on>2026-01-30 17:44:28</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

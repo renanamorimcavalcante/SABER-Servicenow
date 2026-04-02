@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rte_eb_etl_field">
+    <sys_rte_eb_etl_field action="INSERT_OR_UPDATE">
+        <coalesce>false</coalesce>
+        <coercion_action>create</coercion_action>
+        <field>sn_ihub_target_u_observacao</field>
+        <name>sn_ihub_target_u_observacao</name>
+        <sys_class_name>sys_rte_eb_etl_field</sys_class_name>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2026-01-30 13:36:33</sys_created_on>
+        <sys_id>d4cf0c01c336b610f5cf33fc05013101</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sn_ihub_target_u_observacao</sys_name>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_policy/>
+        <sys_rte_eb_definition display_value="Alunos Data Mapping_etl_ihub">251d4cc5c3f2b610f5cf33fc050131b3</sys_rte_eb_definition>
+        <sys_rte_eb_entity display_value="IHUB_TARGET_TEMP_x_1412294_saber_alunos">5ccfc801c336b610f5cf33fc050131d0</sys_rte_eb_entity>
+        <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+        <sys_update_name>sys_rte_eb_etl_field_d4cf0c01c336b610f5cf33fc05013101</sys_update_name>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2026-01-30 13:36:33</sys_updated_on>
+    </sys_rte_eb_etl_field>
+</record_update>

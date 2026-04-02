@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1412294_saber.DeepSeekSaberUtils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Chat DeepSeek SABER</description>
+        <mobile_callable>false</mobile_callable>
+        <name>DeepSeekSaberUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var DeepSeekSaberUtils = Class.create();
+DeepSeekSaberUtils.prototype = {
+    initialize: function() {},
+
+    /**
+     * Gera um plano de recuperação chamando a DeepSeek.
+     * @param {GlideRecord} alunoGR - Registro da tabela de alunos.
+     */
+    gerarPlanoRecuperacao: function(alunoGR) {
+        var nome = alunoGR.getDisplayValue(); 
+        var responsavel = alunoGR.responsavel_do_aluno || "não informado";
+        var dificuldades = alunoGR.u_info_aluno || "sem informações";
+
+        var meuPrompt = "Atue como um tutor pedagógico. Crie um plano de recuperação para o aluno " + nome + ". " +
+                        "Responsável: " + responsavel + ". " +
+                        "Dificuldades: " + dificuldades + ". " +
+                        "Notas atuais: NOTA 5. " +
+                        "Seja motivador e prático. Escreva um plano curto e simples.";
+        
+        return this._chamarDeepSeek(meuPrompt);
+    },
+
+    /**
+     * Chamada direta pelo Virtual Agent com suporte a histórico (Memória)
+     * @param {string} pergunta - O que o professor digitou.
+     * @param {string} historico - O conteúdo acumulado da vaVars.historico.
+     */
+    perguntarComHistorico: function(pergunta, historico) {
+        // Instrução de Sistema para manter a IA no papel pedagógico e objetiva
+        var instrucaoSistema = "Você é um assistente pedagógico objetivo para o sistema SABER. " +
+                               "Use o histórico abaixo para contextualizar sua resposta, mas foque na nova dúvida. " +
+                               "Seja breve e direto para economizar tokens.";
+        
+        // Montagem do Prompt com Memória
+        var promptFinal = instrucaoSistema + 
+                          "HISTÓRICO DE CONVERSA:" + (historico || "Sem conversas anteriores.") + 
+                          "NOVA PERGUNTA DO PROFESSOR: " + pergunta + 
+                          "ASSISTENTE:";
+        
+        return this._chamarDeepSeek(promptFinal);
+    },
+
+    /**
+     * Método privado para execução da REST Message
+     * @param {string} promptFinal - O texto completo a ser enviado.
+     */
+    _chamarDeepSeek: function(promptFinal) {
+        try {
+            // Utilizando sua REST Message e Function configuradas
+            var r = new sn_ws.RESTMessageV2('x_1412294_saber.DeepeSeek Integration SABER', 'Custom POST');
+            
+            r.setStringParameterNoEscape('prompt', promptFinal);
+            r.setStringParameterNoEscape('temperature', '0.7');
+
+            var response = r.execute();
+            var responseBody = response.getBody();
+            var httpStatus = response.getStatusCode();
+
+            if (httpStatus == 200) {
+                var parsedJson = JSON.parse(responseBody);
+                // Retorna o conteúdo da resposta da IA
+                return parsedJson.choices[0].message.content;
+            } else {
+                gs.error("Erro na integração DeepSeek. Status: " + httpStatus + " - Body: " + responseBody);
+                return "Desculpe, professor. Tive um problema técnico ao consultar a base de dados (Status: " + httpStatus + ").";
+            }
+        } catch (ex) {
+            gs.error("Falha técnica no Script Include DeepSeekSaberUtils: " + ex.message);
+            return "Erro técnico ao processar sua solicitação: " + ex.message;
+        }
+    },
+
+    type: 'DeepSeekSaberUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>renan.cavalcante</sys_created_by>
+        <sys_created_on>2026-01-30 12:56:57</sys_created_on>
+        <sys_id>8d758041c3b2b610f5cf33fc05013172</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>DeepSeekSaberUtils</sys_name>
+        <sys_package display_value="SABER" source="x_1412294_saber">47ca4ea7c3632210f5cf33fc0501315c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="SABER">47ca4ea7c3632210f5cf33fc0501315c</sys_scope>
+        <sys_update_name>sys_script_include_8d758041c3b2b610f5cf33fc05013172</sys_update_name>
+        <sys_updated_by>renan.cavalcante</sys_updated_by>
+        <sys_updated_on>2026-01-31 23:45:15</sys_updated_on>
+    </sys_script_include>
+</record_update>
